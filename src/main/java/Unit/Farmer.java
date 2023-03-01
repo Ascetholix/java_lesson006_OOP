@@ -1,4 +1,4 @@
-package Unit.pers;
+package Unit;
 import Unit.Person;
 
 import java.util.ArrayList;
@@ -43,8 +43,8 @@ public class Farmer extends Person {
     }
 
     public String toString() {
-        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d Deliver: %d %s ",
-                name, Math.round(hp), def, attack, Math.round(Math.abs((damageMin + damageMax) / 2)), delivery, state);
+        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d Deliver: %d %s x:%d y:%d ",
+                name, Math.round(hp), def, attack, Math.round(Math.abs((damageMin + damageMax) / 2)), delivery, state, position.posX,position.posY);
 
 
     }

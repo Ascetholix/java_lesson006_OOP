@@ -21,7 +21,6 @@ public abstract class Shooter extends Person{
 
     //    Реализовать метод step() стрелков.
     public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
-
         // цикл проверки услови если все противники мертвы что бы дальше не ходить
         int countDie = 0; // счетчик мертвых
         for (int i = 0; i < team2.size(); i++) {
@@ -54,8 +53,8 @@ public abstract class Shooter extends Person{
     }
 
     public String toString() {
-        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d Shots: %2d %s ",
-                name,Math.round(hp), def,attack,Math.round(Math.abs((damageMin+damageMax)/2)),shot, state);
+        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d Shots: %2d %s x:%d y:%d ",
+                name,Math.round(hp), def,attack,Math.round(Math.abs((damageMin+damageMax)/2)),shot, state, position.posX,position.posY);
 
     }
 }

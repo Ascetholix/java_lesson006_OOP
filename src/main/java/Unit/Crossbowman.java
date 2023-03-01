@@ -1,4 +1,4 @@
-package Unit.pers;
+package Unit;
 import Unit.Shooter;
 /**
  * Арбалетчик

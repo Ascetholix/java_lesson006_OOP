@@ -1,7 +1,5 @@
 package Unit;
 
-import Unit.pers.Farmer;
-
 import java.util.ArrayList;
 
 public abstract class Person implements GameInterface {
@@ -68,7 +66,10 @@ public abstract class Person implements GameInterface {
     public int[] getPosition() {
         return new int[]{position.posX, position.posY};
     }
-
+    public void setPosition(int x,  int y){
+        position.posX = x;
+        position.posY = y;
+    }
     public String getState() {
         return state;
     }
@@ -162,8 +163,8 @@ public abstract class Person implements GameInterface {
 //                state;
 //    }
     public String toString() {
-        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d %s ",
-                name,Math.round(hp), def,attack,Math.round(Math.abs((damageMin+damageMax)/2)), state);
+        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %2d %s x:%d y:%d ",
+                name,Math.round(hp), def,attack,Math.round(Math.abs((damageMin+damageMax)/2)), state,position.posX,position.posY);
 
     }
 }

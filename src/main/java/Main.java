@@ -1,5 +1,4 @@
 import Unit.*;
-import Unit.pers.*;
 
 import java.util.*;
 
@@ -12,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        arrayListWhite.addAll(getUnit(UNITS, 1));
-        arrayListDark.addAll(getUnit(UNITS, 2));
+        arrayListDark.addAll(getUnit(UNITS, 1));
+        arrayListWhite.addAll(getUnit(UNITS, 2));
 
         arrayListAll.addAll(arrayListWhite);
         arrayListAll.addAll(arrayListDark);
@@ -48,7 +47,7 @@ public class Main {
         Random rnd = new Random();
         ArrayList<Person> arrayList = new ArrayList<>();
         int sideXTeam1 = 1;  // положения по Х команды 1
-        int sideXTeam2 = a; // положения по Х команды 2
+        int sideXTeam2 = 10; // положения по Х команды 2
         int columns = 1;   // положения в колоне
         if (group == 0) {
             for (int i = 0; i < a; i++) {

@@ -27,6 +27,7 @@ public abstract class Sorcerer extends Person {
 //    }
 
     public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
+        if (state.equals("Die")) return; // Проверка если сам жив
         for (Person person : team1) {
             if (person.hp < person.maxHp) {
                 person.getDamage(damageMin);
@@ -36,8 +37,8 @@ public abstract class Sorcerer extends Person {
     }
 
     public String toString() {
-        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %d Magic: %2d %s ",
-                name, Math.round(hp), def, attack, Math.round(Math.abs((damageMin + damageMax) / 2)), magic, state);
+        return String.format("Имя: %7s Hp: %2d Def: %2d Attack: %2d Dem: %d Magic: %2d %s x:%d y:%d ",
+                name, Math.round(hp), def, attack, Math.round(Math.abs((damageMin + damageMax) / 2)), magic, state,position.posX,position.posY);
 
 
     }

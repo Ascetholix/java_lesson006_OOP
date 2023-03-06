@@ -27,7 +27,10 @@ public abstract class Sorcerer extends Person {
 //    }
 
     public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
-        if (state.equals("Die")) return; // Проверка если сам жив
+        if (state.equals("Die")){
+            emoji = "\uD83D\uDC80";
+            return;
+        } // Проверка если сам жив
         for (Person person : team1) {
             if (person.hp < person.maxHp) {
                 person.getDamage(damageMin);

@@ -22,17 +22,20 @@ public class Main {
 
         while (true){
 
+            check(arrayListAll);
             View.view();
-            scanner.nextLine();
+//            scanner.nextLine();
             for (Person person: arrayListAll) {
                 if(arrayListWhite.contains(person)) person.step(arrayListWhite,arrayListDark);
                 else person.step(arrayListDark,arrayListWhite);
 
             }
-            check(arrayListWhite);
-            check(arrayListDark);
+//            check(arrayListWhite);
+//            check(arrayListDark);
+
         }
 
+//        System.out.println("💀");
     }
 
     /** Метод именование персонажей */
@@ -190,6 +193,8 @@ public class Main {
                 arrayList.get(i).setSpeed(0);
                 arrayList.get(i).setName("++++");
                 arrayList.get(i).setData(0);
+                arrayList.get(i).setEmoji("\uD83D\uDC80");
+
             }
         }
     }

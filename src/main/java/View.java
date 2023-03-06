@@ -24,18 +24,18 @@ public class View {
                 .replace('g', '\u2514')
                 .replace('h', '\u2534')
                 .replace('i', '\u2518')
-                .replace('-', '\u2500');
+                .replace('-', '⟼');
     }
     private static String   getChar(int x, int y){
-        String out = "| ";
+        String out = "|\u001B[30m⟼\u001B[00m";
         for (Person person: Main.arrayListAll) {
             if ((person.getPosition()[0] == x) && (person.getPosition()[1] == y)){
                 if (person.getHp() == 0) {
                     out = "|" + (AnsiColors.ANSI_RED + person.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (Main.arrayListWhite.contains(person)) out = "|" + (AnsiColors.ANSI_GREEN + person.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
-                if (Main.arrayListDark.contains(person)) out = "|" + (AnsiColors.ANSI_BLUE + person.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (Main.arrayListWhite.contains(person)) out = "|" + (AnsiColors.ANSI_GREEN_BACKGROUND + person.getInfo() + AnsiColors.ANSI_RESET);
+                if (Main.arrayListDark.contains(person)) out = "|" + (AnsiColors.ANSI_BLUE_BACKGROUND + person.getInfo() + AnsiColors.ANSI_RESET);
                 break;
             }
         }

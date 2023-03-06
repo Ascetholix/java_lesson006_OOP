@@ -28,7 +28,10 @@ public abstract class Shooter extends Person{
             if(countDie == team2.size()) return;
         }
 
-        if (state.equals("Die") || shot == 0) return;           //  3.1 Если жизнь равна нулю или стрел нет, завершить обработку.
+        if (state.equals("Die") || shot == 0) {
+            emoji = "\uD83D\uDC80";
+            return;
+        }           //  3.1 Если жизнь равна нулю или стрел нет, завершить обработку.
         int target = findNearest(team2);                        // 3.2 Поиск среди противников наиболее приближённого. мин макс и сред повреждние
         float damage = (team2.get(target).def -attack > 0)?     // 3.3 Нанести  повреждение найденному противнику.
                 damageMin : (team2.get(target).def -attack < 0)?
@@ -37,14 +40,14 @@ public abstract class Shooter extends Person{
         if(!team2.get(target).state.equals("Die")) team2.get(target).getDamage(damage);  // происвоит опоненту если он жив
 
         for (int i = 0; i < team1.size(); i++) {                // поиск фермара по getInfo и состяную state
-            if (team1.get(i).getInfo().equals("Фермер") && team1.get(i).state.equals("Stand")){
+            if (team1.get(i).getInfo().equals("\uD83D\uDD28") && team1.get(i).state.equals("Stand")){
                 team1.get(i).state = "Busy";
                 team1.get(i).setData(0);                         // если условия соcтoяние Stand то доставка 0 состояние Busy и выход
                 return;
             }
         }
         for (int i = 0; i < team1.size(); i++) {             // если состояние Busy то доставка 1 состояние Stand
-            if (team1.get(i).getInfo().equals("Фермер") && team1.get(i).state.equals("Busy")) {
+            if (team1.get(i).getInfo().equals("\uD83D\uDD28") && team1.get(i).state.equals("Busy")) {
                 team1.get(i).setData(1);
                 team1.get(i).state = "Stand";;
             }

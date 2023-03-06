@@ -2,7 +2,7 @@ package Unit;
 
 import java.util.ArrayList;
 
-public abstract class Person implements GameInterface {
+public abstract class Person implements GameInterface, Emoji {
     protected String name;
     protected int attack;
     protected int def;
@@ -13,7 +13,7 @@ public abstract class Person implements GameInterface {
     protected int speed;
     protected Vector2D position;
     protected String state;
-
+    protected String emoji;
     protected static int prCount;
 
     public Person(String name, int attack, int def, int damageMin, int damageMax,
@@ -28,6 +28,8 @@ public abstract class Person implements GameInterface {
         this.speed = speed;
         position = new Vector2D(posX, posY);
         state = "Stand";
+        emoji = "";
+
         prCount++;
     }
 
@@ -95,6 +97,10 @@ public abstract class Person implements GameInterface {
 
     public void setDef(int def) {
         this.def = def;
+    }
+
+    public void setEmoji(String emoji) {
+        this.emoji = emoji;
     }
 
     public void setDamageMin(int damageMin) {
